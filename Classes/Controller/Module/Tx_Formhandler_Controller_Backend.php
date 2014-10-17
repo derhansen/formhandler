@@ -824,6 +824,11 @@ class Tx_Formhandler_Controller_Backend extends Tx_Formhandler_AbstractControlle
 			$this->pidFilter = $this->id;
 		}
 
+		if (strlen($params['search']) > 0) {
+			$search = mysql_real_escape_string($params['search']);
+			$where[] = 'params LIKE \'%' . $search . '%\'';
+		}
+
 		if (trim($params['ipFilter']) > 0) {
 			$ips = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $params['ipFilter'], 1);
 			$ip_search = array();
@@ -869,6 +874,7 @@ class Tx_Formhandler_Controller_Backend extends Tx_Formhandler_AbstractControlle
 		$markers['###URL###'] = $_SERVER['PHP_SELF'];
 		$markers['###UID###'] = $this->pidFilter;
 		$markers['###IP###'] = htmlspecialchars($params['ipFilter']);
+		$markers['###SEARCH###'] = htmlspecialchars($params['search']);
 		$markers['###value_startdate###'] = htmlspecialchars($params['startdateFilter']);
 		$markers['###value_enddate###'] = htmlspecialchars($params['enddateFilter']);
 		$markers['###selected_howmuch_' . $params['howmuch'] . '###'] = 'selected="selected"';
@@ -886,6 +892,7 @@ class Tx_Formhandler_Controller_Backend extends Tx_Formhandler_AbstractControlle
 
 		$markers['###LLL:filter###'] = $GLOBALS['LANG']->getLL('filter');
 		$markers['###LLL:pid_label###'] = $GLOBALS['LANG']->getLL('pid_label');
+		$markers['###LLL:search###'] = $GLOBALS['LANG']->getLL('search');
 		$markers['###LLL:ip_address###'] = $GLOBALS['LANG']->getLL('ip_address');
 		$markers['###LLL:pagination_how_much###'] = $GLOBALS['LANG']->getLL('pagination_how_much');
 		$markers['###LLL:pagination_entries###'] = $GLOBALS['LANG']->getLL('pagination_entries');

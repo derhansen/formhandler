@@ -46,6 +46,7 @@
 			<label index="no-logs-message">Nothing to remove!</label>
 			<label index="clear-logs-success-header">Success!</label>
 			<label index="clear-logs-success-message">%d records were removed successfully!</label>
+			<label index="search">Search</label>
 			<label index="pagination_how_much">Display limit: </label>
 			<label index="pagination_entries">Entries</label>
 			<label index="pagination_show_entries">Show entries:</label>
@@ -116,6 +117,7 @@
 			<label index="no-logs-message">Nothing to remove!</label>
 			<label index="clear-logs-success-header">Success!</label>
 			<label index="clear-logs-success-message">%d records were removed successfully!</label>
+			<label index="search">Search</label>
 			<label index="pagination_how_much">Display limit: </label>
 			<label index="pagination_entries">Entries</label>
 			<label index="pagination_show_entries">Show entries:</label>
@@ -186,6 +188,7 @@
 			<label index="no-logs-message">Keine Log-Datensätze gefunden!</label>
 			<label index="clear-logs-success-header">Erfolgreich!</label>
 			<label index="clear-logs-success-message">%d Datensätze wurden erfolgreich gelöscht!</label>
+			<label index="search">Suchen</label>
 			<label index="pagination_how_much">Anzeige Limit: </label>
 			<label index="pagination_entries">Datensätze</label>
 			<label index="pagination_show_entries">Zeige Datensätze:</label>
